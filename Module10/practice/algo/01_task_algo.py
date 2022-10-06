@@ -4,3 +4,16 @@
 # Вводится число N, далее еще N − 1 чисел: номера оставшихся карточек (различные числа от 1 до N).
 # Программа должна вывести номер потерянной карточки.
 
+cards_num = int(input("cards_num:"))
+cards = []
+i = 0
+while i < cards_num - 1:
+    cards.append(int(input(f"введите номер {i+1}-й карточки: ")))
+    i += 1
+print(cards)
+i = 1
+while i < cards_num:
+    if cards.count(i) == 0:
+        print(f"Потеряна карточка c номером {i}!")
+        break
+    i += 1
